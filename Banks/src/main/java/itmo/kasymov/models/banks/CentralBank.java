@@ -28,6 +28,9 @@ public class CentralBank {
         return currentDate;
     }
 
+    /**
+     * @return instance of singleton CentralBank.
+     */
     public static CentralBank getInstance() {
         if (centralBank == null) {
             centralBank = new CentralBank();
@@ -60,6 +63,11 @@ public class CentralBank {
         clients.add(client);
     }
 
+    /**
+     * Function that used to skip days.
+     * @param count Number of days to skip.
+     * @throws BanksException
+     */
     public void rewindDay(int count) throws BanksException {
         if (count <= MIN_COUNT)
             throw new BanksException("Count of days can't be negative.");
@@ -71,6 +79,11 @@ public class CentralBank {
         }
     }
 
+    /**
+     * Function that used to skip months (uses rewindDay method).
+     * @param count Number of months to skip.
+     * @throws BanksException
+     */
     public void rewindMonth(int count) throws BanksException {
         if (count <= MIN_COUNT)
             throw new BanksException("Count of months can't be negative.");
@@ -78,6 +91,11 @@ public class CentralBank {
             rewindDay(currentDate.lengthOfMonth());
     }
 
+    /**
+     * Function that used to skip years (uses rewindMonth method).
+     * @param count Number of years to skip.
+     * @throws BanksException
+     */
     public void rewindYear(int count) throws BanksException {
         if (count <= MIN_COUNT)
             throw new BanksException("Count of years can't be negative.");

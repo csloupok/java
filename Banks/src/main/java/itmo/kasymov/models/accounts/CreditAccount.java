@@ -18,6 +18,11 @@ public class CreditAccount extends Account {
         setBalance(getBalance() + amount);
     }
 
+    /**
+     * Function checks if client is confirmed and have enough credit limit to work.
+     * @param amount Amount to withdraw from account.
+     * @throws BanksException when negative amount is entered or when exceeded credit/unconfirmed limit.
+     */
     @Override
     public void withdraw(double amount) throws BanksException {
         if (amount < MIN_AMOUNT_OF_CREDITS) throw new BanksException("Number of credits can't be negative.");
@@ -28,6 +33,9 @@ public class CreditAccount extends Account {
         setBalance(getBalance() - amount);
     }
 
+    /**
+     * If balance becomes negative function will withdraw credit fee that calculated from bank terms.
+     */
     @Override
     public void refreshAccount() {
         if (getBalance() < MIN_AMOUNT_OF_CREDITS)

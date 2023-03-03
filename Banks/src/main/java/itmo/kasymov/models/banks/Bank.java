@@ -55,6 +55,11 @@ public class Bank implements Subject {
     }
 
 
+    /**
+     * @param client Client for whom we create account.
+     * @return New debit account.
+     * @throws BanksException is thrown when given client is null.
+     */
     public DebitAccount createDebitAccount(Client client) throws BanksException {
         if (client == null)
             throw new BanksException("Client is null.");
@@ -86,12 +91,20 @@ public class Bank implements Subject {
         notifyMe();
     }
 
+    /**
+     * Utility function that is used to refresh all account when day is passed.
+     */
     public void refreshAccounts() {
         for (Account account : accounts) {
             account.refreshAccount();
         }
     }
 
+    /**
+     * Function attaches observer by adding it to bank's list and changing boolean field isSubscribed to true.
+     * @param observer Subscriber that wants to be notified about events.
+     * @throws BanksException when client is already subscribed.
+     */
     @Override
     public void attach(Observer observer) throws BanksException {
         if (observer == null)
@@ -101,6 +114,11 @@ public class Bank implements Subject {
         System.out.println("Bank: Client subscribed.");
     }
 
+    /**
+     * Function detaches observer by remocing it from bank's list and changing boolean field isSubscribed to false.
+     * @param observer Subscriber that wants to be NOT notified about events anymore.
+     * @throws BanksException when client is already unsubscribed.
+     */
     @Override
     public void detach(Observer observer) throws BanksException {
         if (observer == null)
@@ -110,6 +128,9 @@ public class Bank implements Subject {
         System.out.println("Bank: Client unsubscribed.");
     }
 
+    /**
+     * Function that notifies all observers subscribed to events.
+     */
     @Override
     public void notifyMe() {
         System.out.println("Bank: Notifying clients...");

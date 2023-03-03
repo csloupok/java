@@ -76,6 +76,10 @@ public class Client implements Observer {
         this.subscription = false;
     }
 
+    /**
+     * Pozerskaya function to just show that my pattern works.
+     * @param subject
+     */
     @Override
     public void update(Subject subject) {
         System.out.println("I reacted.");

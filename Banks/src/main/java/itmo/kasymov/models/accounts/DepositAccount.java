@@ -45,6 +45,9 @@ public class DepositAccount extends Account {
         setBalance(getBalance() - amount);
     }
 
+    /**
+     * Function sets current interest according to balance and adds interest credits calculated from bank terms.
+     */
     @Override
     public void refreshAccount() {
         if (getBalance() < getBank().getTerms().getMinDepositCredits())

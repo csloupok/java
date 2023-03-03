@@ -31,6 +31,9 @@ public class DebitAccount extends Account {
         setBalance(getBalance() - amount);
     }
 
+    /**
+     * Function deposit interest credits that calculated from bank terms.
+     */
     @Override
     public void refreshAccount() {
         interestCredits += getBalance() * getBank().getTerms().calculateDailyInterest(getBank().getTerms().getDebitInterest(), CentralBank.getInstance().getCurrentDate());

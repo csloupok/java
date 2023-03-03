@@ -181,6 +181,12 @@ public class Terms {
         unconfirmedLimit = value;
     }
 
+    /**
+     * Utility function which used to calculate daily interest on base of yearly percent. Work just fine with leap and regular years.
+     * @param interest Yearly percent.
+     * @param date Current date.
+     * @return Daily interest.
+     */
     public double calculateDailyInterest(double interest, LocalDate date) {
         if (date.isLeapYear())
             return interest / 100 / DAYS_IN_LEAP_YEAR;

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"itmo.kasymov.exceptions"},{"l":"itmo.kasymov.interfaces"},{"l":"itmo.kasymov.models.accounts"},{"l":"itmo.kasymov.models.banks"},{"l":"itmo.kasymov.models.clients"},{"l":"itmo.kasymov.models.transactions"}];updateSearchResults();
