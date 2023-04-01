@@ -12,39 +12,29 @@ public class JdbcBrandDao extends JdbcDao<Brand> {
     }
 
     public Brand save(Brand entity) {
-        this.doActionDb((statement) -> {
-            statement.executeUpdate(String.format("INSERT INTO BRAND (BRAND_ID, BRAND_NAME, FOUND_DATE) values (%d, '%s', '%s')", entity.getId(), entity.getName(), entity.getDate().toString()));
-        });
+        this.doActionDb((statement) -> statement.executeUpdate(String.format("INSERT INTO BRAND (BRAND_ID, BRAND_NAME, FOUND_DATE) values (%d, '%s', '%s')", entity.getId(), entity.getName(), entity.getDate().toString())));
         return entity;
     }
 
     public void deleteById(long id) {
-        this.doActionDb((statement) -> {
-            statement.executeUpdate(String.format("DELETE FROM BRAND WHERE BRAND_ID = %d", id));
-        });
+        this.doActionDb((statement) -> statement.executeUpdate(String.format("DELETE FROM BRAND WHERE BRAND_ID = %d", id)));
     }
 
     public void deleteByEntity(Brand entity) {
-        this.doActionDb((statement) -> {
-            statement.executeUpdate(String.format("DELETE FROM BRAND WHERE BRAND_NAME = '%s' AND FOUND_DATE = '%s'", entity.getName(), entity.getDate()));
-        });
+        this.doActionDb((statement) -> statement.executeUpdate(String.format("DELETE FROM BRAND WHERE BRAND_NAME = '%s' AND FOUND_DATE = '%s'", entity.getName(), entity.getDate())));
     }
 
     public void deleteAll() {
-        this.doActionDb((statement) -> {
-            statement.executeUpdate("TRUNCATE TABLE BRAND CASCADE");
-        });
+        this.doActionDb((statement) -> statement.executeUpdate("TRUNCATE TABLE BRAND CASCADE"));
     }
 
     public Brand update(Brand entity) {
-        this.doActionDb((statement) -> {
-            statement.executeUpdate(String.format("UPDATE BRAND SET BRAND_NAME = '%s', FOUND_DATE = '%s' WHERE BRAND_ID = %d", entity.getName(), entity.getDate(), entity.getId()));
-        });
+        this.doActionDb((statement) -> statement.executeUpdate(String.format("UPDATE BRAND SET BRAND_NAME = '%s', FOUND_DATE = '%s' WHERE BRAND_ID = %d", entity.getName(), entity.getDate(), entity.getId())));
         return entity;
     }
 
     public Brand getById(long id) {
-        AtomicReference<Brand> result = new AtomicReference(null);
+        AtomicReference<Brand> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> {
             ResultSet rs = statement.executeQuery(String.format("SELECT * FROM BRAND WHERE BRAND_ID = %d", id));
 
@@ -57,10 +47,10 @@ public class JdbcBrandDao extends JdbcDao<Brand> {
     }
 
     public List<Brand> getAll() {
-        AtomicReference<List<Brand>> result = new AtomicReference(null);
+        AtomicReference<List<Brand>> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> {
             ResultSet rs = statement.executeQuery("SELECT * FROM BRAND");
-            List<Brand> brands = new ArrayList();
+            List<Brand> brands = new ArrayList<>();
 
             while (rs.next()) {
                 brands.add(new Brand(rs.getString("BRAND_NAME"), rs.getDate("FOUND_DATE").toLocalDate(), rs.getLong("BRAND_ID")));

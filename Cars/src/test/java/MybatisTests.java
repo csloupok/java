@@ -27,15 +27,9 @@ public class MybatisTests {
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);
-        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> {
-            return model.getId() == model1.getId();
-        }));
-        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> {
-            return model.getId() == model2.getId();
-        }));
-        Assertions.assertTrue(this.brandDao.getAll().stream().anyMatch((brnd) -> {
-            return brnd.getId() == brand.getId();
-        }));
+        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> model.getId() == model1.getId()));
+        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> model.getId() == model2.getId()));
+        Assertions.assertTrue(this.brandDao.getAll().stream().anyMatch((brnd) -> brnd.getId() == brand.getId()));
     }
 
     @Test
@@ -47,16 +41,10 @@ public class MybatisTests {
         this.modelDao.save(model1);
         this.modelDao.save(model2);
         this.modelDao.deleteByEntity(model1);
-        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().noneMatch((model) -> {
-            return model.getId() == model1.getId();
-        }));
-        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> {
-            return model.getId() == model2.getId();
-        }));
+        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().noneMatch((model) -> model.getId() == model1.getId()));
+        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> model.getId() == model2.getId()));
         this.brandDao.deleteByEntity(brand);
-        Assertions.assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> {
-            return brnd.getId() == brand.getId();
-        }));
+        Assertions.assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> brnd.getId() == brand.getId()));
     }
 
     @Test
@@ -68,16 +56,10 @@ public class MybatisTests {
         this.modelDao.save(model1);
         this.modelDao.save(model2);
         this.modelDao.deleteById(model1.getId());
-        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().noneMatch((model) -> {
-            return model.getId() == model1.getId();
-        }));
-        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> {
-            return model.getId() == model2.getId();
-        }));
+        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().noneMatch((model) -> model.getId() == model1.getId()));
+        Assertions.assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> model.getId() == model2.getId()));
         this.brandDao.deleteById(brand.getId());
-        Assertions.assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> {
-            return brnd.getId() == brand.getId();
-        }));
+        Assertions.assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> brnd.getId() == brand.getId()));
     }
 
     @Test

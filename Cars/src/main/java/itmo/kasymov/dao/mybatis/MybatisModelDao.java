@@ -10,56 +10,40 @@ public class MybatisModelDao extends MybatisDao<Model> {
     }
 
     public void save(Model entity) {
-        this.doActionDb((statement) -> {
-            statement.getMapper(ModelMapper.class).save(entity);
-        });
+        this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).save(entity));
     }
 
     public void deleteById(long id) {
-        this.doActionDb((statement) -> {
-            statement.getMapper(ModelMapper.class).deleteById(id);
-        });
+        this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).deleteById(id));
     }
 
     public void deleteByEntity(Model entity) {
-        this.doActionDb((statement) -> {
-            statement.getMapper(ModelMapper.class).deleteByEntity(entity);
-        });
+        this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).deleteByEntity(entity));
     }
 
     public void deleteAll() {
-        this.doActionDb((statement) -> {
-            statement.getMapper(ModelMapper.class).deleteAll();
-        });
+        this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).deleteAll());
     }
 
     public void update(Model entity) {
-        this.doActionDb((statement) -> {
-            statement.getMapper(ModelMapper.class).update(entity);
-        });
+        this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).update(entity));
     }
 
     public Model getById(long id) {
-        AtomicReference<Model> result = new AtomicReference(null);
-        this.doActionDb((statement) -> {
-            result.set(statement.getMapper(ModelMapper.class).getById(id));
-        });
+        AtomicReference<Model> result = new AtomicReference<>(null);
+        this.doActionDb((statement) -> result.set(statement.getMapper(ModelMapper.class).getById(id)));
         return result.get();
     }
 
     public List<Model> getAll() {
-        AtomicReference<List<Model>> result = new AtomicReference(null);
-        this.doActionDb((statement) -> {
-            result.set(statement.getMapper(ModelMapper.class).getAll());
-        });
+        AtomicReference<List<Model>> result = new AtomicReference<>(null);
+        this.doActionDb((statement) -> result.set(statement.getMapper(ModelMapper.class).getAll()));
         return result.get();
     }
 
     public List<Model> getAllByBrandId(long id) {
-        AtomicReference<List<Model>> result = new AtomicReference(null);
-        this.doActionDb((statement) -> {
-            result.set(statement.getMapper(ModelMapper.class).getAllByBrandId(id));
-        });
+        AtomicReference<List<Model>> result = new AtomicReference<>(null);
+        this.doActionDb((statement) -> result.set(statement.getMapper(ModelMapper.class).getAllByBrandId(id)));
         return result.get();
     }
 }

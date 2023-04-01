@@ -29,7 +29,7 @@ public abstract class JdbcDao<T> {
 
     protected void doActionDb(ThrowingConsumer<Statement> consumer) {
         try {
-            Connection c = DriverManager.getConnection("jdbc:postgresql://localhost/eldarkasymov");
+            Connection c = DriverManager.getConnection(dbURL);
 
             try {
                 Statement statement = c.createStatement();
