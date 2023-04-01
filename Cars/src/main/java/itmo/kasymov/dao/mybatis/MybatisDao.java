@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package itmo.kasymov.dao.mybatis;
 
 import org.apache.ibatis.io.Resources;
