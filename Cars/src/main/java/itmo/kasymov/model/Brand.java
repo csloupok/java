@@ -11,7 +11,7 @@ import java.util.UUID;
 public class Brand {
     @Id
     @Column(name = "BRAND_ID")
-    private long id;
+    private Long id;
     @Column(name = "BRAND_NAME")
     private String name;
     @Temporal(TemporalType.DATE)
@@ -21,7 +21,7 @@ public class Brand {
     public Brand() {
     }
 
-    public Brand(String name, LocalDate date, long... id) throws Exception {
+    public Brand(String name, LocalDate date, Long... id) throws Exception {
         if (StringUtils.isEmpty(name)) {
             throw new Exception("String is empty!");
         } else {
@@ -36,7 +36,7 @@ public class Brand {
         }
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 

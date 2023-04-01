@@ -41,7 +41,7 @@ public class HibernateBrandDao extends HibernateDao<Brand> {
         return entity;
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -160,7 +160,7 @@ public class HibernateBrandDao extends HibernateDao<Brand> {
         return entity;
     }
 
-    public Brand getById(long id) {
+    public Brand getById(Long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         Brand var4;

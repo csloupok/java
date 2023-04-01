@@ -7,7 +7,7 @@ import java.util.List;
 public interface BrandMapper {
     void save(Brand var1);
 
-    void deleteById(long var1);
+    void deleteById(Long var1);
 
     void deleteByEntity(Brand var1);
 
@@ -15,7 +15,7 @@ public interface BrandMapper {
 
     void update(Brand var1);
 
-    Brand getById(long var1);
+    Brand getById(Long var1);
 
     List<Brand> getAll();
 }

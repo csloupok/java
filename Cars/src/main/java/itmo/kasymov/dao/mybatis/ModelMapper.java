@@ -7,7 +7,7 @@ import java.util.List;
 public interface ModelMapper {
     void save(Model var1);
 
-    void deleteById(long var1);
+    void deleteById(Long var1);
 
     void deleteByEntity(Model var1);
 
@@ -15,9 +15,9 @@ public interface ModelMapper {
 
     void update(Model var1);
 
-    Model getById(long var1);
+    Model getById(Long var1);
 
     List<Model> getAll();
 
-    List<Model> getAllByBrandId(long var1);
+    List<Model> getAllByBrandId(Long var1);
 }

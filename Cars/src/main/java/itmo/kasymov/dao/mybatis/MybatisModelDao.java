@@ -13,7 +13,7 @@ public class MybatisModelDao extends MybatisDao<Model> {
         this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).save(entity));
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).deleteById(id));
     }
 
@@ -29,7 +29,7 @@ public class MybatisModelDao extends MybatisDao<Model> {
         this.doActionDb((statement) -> statement.getMapper(ModelMapper.class).update(entity));
     }
 
-    public Model getById(long id) {
+    public Model getById(Long id) {
         AtomicReference<Model> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> result.set(statement.getMapper(ModelMapper.class).getById(id)));
         return result.get();
@@ -41,7 +41,7 @@ public class MybatisModelDao extends MybatisDao<Model> {
         return result.get();
     }
 
-    public List<Model> getAllByBrandId(long id) {
+    public List<Model> getAllByBrandId(Long id) {
         AtomicReference<List<Model>> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> result.set(statement.getMapper(ModelMapper.class).getAllByBrandId(id)));
         return result.get();

@@ -41,7 +41,7 @@ public class HibernateModelDao extends HibernateDao<Model> {
         return entity;
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         try {
             Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -160,7 +160,7 @@ public class HibernateModelDao extends HibernateDao<Model> {
         return entity;
     }
 
-    public Model getById(long id) {
+    public Model getById(Long id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         Model var4;
@@ -215,7 +215,7 @@ public class HibernateModelDao extends HibernateDao<Model> {
         return models;
     }
 
-    public List<Model> getAllByBrandId(long id) {
+    public List<Model> getAllByBrandId(Long id) {
         List<Model> models = null;
 
         try {

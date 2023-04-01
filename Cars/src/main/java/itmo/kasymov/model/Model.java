@@ -10,17 +10,17 @@ import java.util.UUID;
 public class Model {
     @Id
     @Column(name = "MODEL_ID")
-    private long id;
+    private Long id;
     @Column(name = "MODEL_NAME")
     private String name;
     @Column(name = "LENGTH")
-    private int length;
+    private Integer length;
     @Column(name = "WIDTH")
-    private int width;
+    private Integer width;
     @Column(name = "TYPE")
     private String type;
     @Transient
-    private long brand;
+    private Long brand;
     @ManyToOne
     @JoinColumn(name = "BRAND", referencedColumnName = "BRAND_ID")
     private Brand fk_brand;
@@ -28,7 +28,7 @@ public class Model {
     public Model() {
     }
 
-    public Model(String name, int length, int width, String type, long brand, long... id) throws Exception {
+    public Model(String name, Integer length, Integer width, String type, Long brand, Long... id) throws Exception {
         if (StringUtils.isEmpty(name)) {
             throw new Exception("String is empty!");
         } else {
@@ -54,7 +54,7 @@ public class Model {
         this.fk_brand = fk_brand;
     }
 
-    public long getId() {
+    public Long getId() {
         return this.id;
     }
 
@@ -70,11 +70,11 @@ public class Model {
         }
     }
 
-    public int getLength() {
+    public Integer getLength() {
         return this.length;
     }
 
-    public int getWidth() {
+    public Integer getWidth() {
         return this.width;
     }
 
@@ -82,7 +82,7 @@ public class Model {
         return this.type;
     }
 
-    public long getBrand() {
+    public Long getBrand() {
         return this.brand;
     }
 }

@@ -16,7 +16,7 @@ public class JdbcModelDao extends JdbcDao<Model> {
         return entity;
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         this.doActionDb((statement) -> statement.executeUpdate(String.format("DELETE FROM MODEL WHERE MODEL_ID = %d", id)));
     }
 
@@ -33,7 +33,7 @@ public class JdbcModelDao extends JdbcDao<Model> {
         return entity;
     }
 
-    public Model getById(long id) {
+    public Model getById(Long id) {
         AtomicReference<Model> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> {
             ResultSet rs = statement.executeQuery(String.format("SELECT * FROM MODEL WHERE MODEL_ID = %d", id));
@@ -62,7 +62,7 @@ public class JdbcModelDao extends JdbcDao<Model> {
         result.set(models);
     }
 
-    public List<Model> getAllByBrandId(long brand_id) {
+    public List<Model> getAllByBrandId(Long brand_id) {
         AtomicReference<List<Model>> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> {
             ResultSet rs = statement.executeQuery(String.format("SELECT * FROM MODEL WHERE BRAND = %d FETCH FIRST 5 ROWS ONLY", brand_id));

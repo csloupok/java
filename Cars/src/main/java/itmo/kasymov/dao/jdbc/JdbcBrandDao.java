@@ -16,7 +16,7 @@ public class JdbcBrandDao extends JdbcDao<Brand> {
         return entity;
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         this.doActionDb((statement) -> statement.executeUpdate(String.format("DELETE FROM BRAND WHERE BRAND_ID = %d", id)));
     }
 
@@ -33,7 +33,7 @@ public class JdbcBrandDao extends JdbcDao<Brand> {
         return entity;
     }
 
-    public Brand getById(long id) {
+    public Brand getById(Long id) {
         AtomicReference<Brand> result = new AtomicReference<>(null);
         this.doActionDb((statement) -> {
             ResultSet rs = statement.executeQuery(String.format("SELECT * FROM BRAND WHERE BRAND_ID = %d", id));

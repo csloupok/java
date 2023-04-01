@@ -15,7 +15,7 @@ public abstract class MybatisDao<T> {
 
     public abstract void save(T var1);
 
-    public abstract void deleteById(long var1);
+    public abstract void deleteById(Long var1);
 
     public abstract void deleteByEntity(T var1);
 
@@ -23,7 +23,7 @@ public abstract class MybatisDao<T> {
 
     public abstract void update(T var1);
 
-    public abstract T getById(long var1);
+    public abstract T getById(Long var1);
 
     public abstract List<T> getAll();
 
