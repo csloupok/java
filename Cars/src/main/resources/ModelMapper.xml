@@ -1,0 +1,55 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="itmo.kasymov.dao.mybatis.ModelMapper">
+    <resultMap id="modelMap" type="itmo.kasymov.model.Model">
+        <id property="id" column="model_id"/>
+        <result property="name" column="model_name"/>
+        <result property="length" column="length"/>
+        <result property="width" column="width"/>
+        <result property="type" column="type"/>
+        <result property="brand" column="brand"/>
+    </resultMap>
+
+    <select id="getById" resultMap="modelMap">
+        SELECT *
+        FROM MODEL
+        WHERE MODEL_ID = #{id}
+    </select>
+    <select id="getAll" resultMap="modelMap">
+        SELECT *
+        FROM MODEL
+    </select>
+    <insert id="save" parameterType="itmo.kasymov.model.Model">
+        INSERT INTO MODEL (MODEL_ID, MODEL_NAME, LENGTH, WIDTH, TYPE, BRAND)
+        VALUES (#{id}, #{name}, #{length}, #{width}, #{type}, #{brand})
+    </insert>
+    <update id="update" parameterType="itmo.kasymov.model.Model">
+        UPDATE MODEL
+        SET MODEL_NAME=#{name},
+            LENGTH=#{length},
+            WIDTH=#{width},
+            TYPE=#{type},
+            BRAND=#{brand}
+        WHERE MODEL_ID = #{id}
+    </update>
+    <delete id="deleteById" parameterType="long">
+        DELETE
+        FROM MODEL
+        WHERE MODEL_ID = #{id}
+    </delete>
+    <delete id="deleteByEntity" parameterType="itmo.kasymov.model.Model">
+        DELETE
+        FROM MODEL
+        WHERE MODEL_ID = #{id}
+    </delete>
+    <delete id="deleteAll">
+        DELETE
+        FROM MODEL
+    </delete>
+    <select id="getAllByBrandId" resultMap="modelMap">
+        SELECT *
+        FROM MODEL
+        WHERE BRAND = #{id} FETCH FIRST 5 ROWS ONLY
+    </select>
+</mapper>

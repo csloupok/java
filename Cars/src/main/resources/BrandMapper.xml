@@ -1,0 +1,50 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="itmo.kasymov.dao.mybatis.BrandMapper">
+    <resultMap id="brandMap" type="itmo.kasymov.model.Brand">
+        <id property="id" column="BRAND_ID"/>
+        <result property="name" column="BRAND_NAME"/>
+        <result property="date" column="FOUND_DATE"/>
+    </resultMap>
+
+    <select id="getById" resultMap="brandMap">
+        SELECT *
+        FROM BRAND
+        WHERE BRAND_ID = #{id}
+    </select>
+
+    <select id="getAll" resultMap="brandMap">
+        SELECT *
+        FROM BRAND
+    </select>
+
+    <insert id="save" parameterType="itmo.kasymov.model.Brand">
+        INSERT INTO BRAND (BRAND_ID, BRAND_NAME, FOUND_DATE)
+        values (#{id}, #{name}, #{date, jdbcType=DATE})
+    </insert>
+
+    <update id="update" parameterType="itmo.kasymov.model.Brand">
+        UPDATE BRAND
+        SET BRAND_NAME=#{name},
+            FOUND_DATE=#{date, jdbcType=DATE}
+        WHERE BRAND_ID = #{id}
+    </update>
+
+    <delete id="deleteById" parameterType="long">
+        DELETE
+        FROM BRAND
+        WHERE BRAND_ID = #{id}
+    </delete>
+
+    <delete id="deleteByEntity" parameterType="itmo.kasymov.model.Brand">
+        DELETE
+        FROM BRAND
+        WHERE BRAND_ID = #{id}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE
+        FROM BRAND
+    </delete>
+</mapper>
