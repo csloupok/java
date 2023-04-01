@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public abstract class JdbcDao<T> {
-    private final String dbURL = "jdbc:postgresql://localhost/eldarkasymov";
 
     public JdbcDao() {
     }
@@ -29,6 +28,7 @@ public abstract class JdbcDao<T> {
 
     protected void doActionDb(ThrowingConsumer<Statement> consumer) {
         try {
+            String dbURL = "jdbc:postgresql://localhost/eldarkasymov";
             Connection c = DriverManager.getConnection(dbURL);
 
             try {
