@@ -17,6 +17,8 @@ public class Model {
     private Integer length;
     @Column(name = "WIDTH")
     private Integer width;
+    @Column(name = "HEIGHT")
+    private Integer height;
     @Column(name = "TYPE")
     private String type;
     @Transient
