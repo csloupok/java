@@ -44,6 +44,7 @@ public class HibernateTests {
         this.modelDao.deleteByEntity(model1);
         assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().noneMatch((model) -> model.getId().equals(model1.getId())));
         assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> model.getId().equals(model2.getId())));
+        this.modelDao.deleteByEntity(model2);
         this.brandDao.deleteByEntity(brand);
         assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> brnd.getId().equals(brand.getId())));
     }
@@ -61,6 +62,7 @@ public class HibernateTests {
         this.modelDao.deleteById(model1.getId());
         assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().noneMatch((model) -> model.getId().equals(model1.getId())));
         assertTrue(this.modelDao.getAllByBrandId(brand.getId()).stream().anyMatch((model) -> model.getId().equals(model2.getId())));
+        this.modelDao.deleteById(model2.getId());
         this.brandDao.deleteById(brand.getId());
         assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> brnd.getId().equals(brand.getId())));
     }
@@ -79,6 +81,7 @@ public class HibernateTests {
         assertTrue(this.modelDao.getAll().isEmpty());
         this.modelDao.save(model1);
         this.modelDao.save(model2);
+        this.modelDao.deleteAll();
         this.brandDao.deleteAll();
         assertTrue(this.modelDao.getAll().isEmpty());
         assertTrue(this.brandDao.getAll().isEmpty());

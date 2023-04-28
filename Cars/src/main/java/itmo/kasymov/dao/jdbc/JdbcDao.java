@@ -28,8 +28,9 @@ public abstract class JdbcDao<T> {
 
     protected void doActionDb(ThrowingConsumer<Statement> consumer) {
         try {
-            String dbURL = "jdbc:h2:mem:testdb/default?user=sa&password=password";
-            Connection c = DriverManager.getConnection(dbURL);
+            String dbURL = "jdbc:h2:mem:testdb;INIT=RUNSCRIPT FROM 'classpath:/data.sql'";
+            Connection c = DriverManager.getConnection(dbURL, "sa", "password");
+
 
             try {
                 Statement statement = c.createStatement();
