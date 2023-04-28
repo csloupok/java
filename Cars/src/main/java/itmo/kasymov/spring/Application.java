@@ -6,10 +6,9 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(basePackages = "itmo.kasymov")
-@EntityScan("itmo.kasymov.model")
+@EntityScan("itmo.kasymov.entity")
 @SpringBootApplication
 public class Application {
-
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

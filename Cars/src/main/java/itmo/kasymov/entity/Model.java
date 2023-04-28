@@ -1,4 +1,4 @@
-package itmo.kasymov.model;
+package itmo.kasymov.entity;
 
 import jakarta.persistence.*;
 import org.apache.commons.lang3.StringUtils;

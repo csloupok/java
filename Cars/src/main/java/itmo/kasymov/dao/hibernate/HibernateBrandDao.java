@@ -1,6 +1,6 @@
 package itmo.kasymov.dao.hibernate;
 
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

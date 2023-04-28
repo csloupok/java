@@ -1,7 +1,7 @@
 package itmo.kasymov.dao.hibernate;
 
-import itmo.kasymov.model.Brand;
-import itmo.kasymov.model.Model;
+import itmo.kasymov.entity.Brand;
+import itmo.kasymov.entity.Model;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

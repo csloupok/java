@@ -3,7 +3,7 @@ package itmo.kasymov;
 import itmo.kasymov.dao.hibernate.HibernateBrandDao;
 import itmo.kasymov.dao.jdbc.JdbcBrandDao;
 import itmo.kasymov.dao.mybatis.MybatisBrandDao;
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 
 import java.time.LocalDate;
 

@@ -1,6 +1,6 @@
 package itmo.kasymov.dao.jdbc;
 
-import itmo.kasymov.model.Model;
+import itmo.kasymov.entity.Model;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public class JdbcModelDao extends JdbcDao<Model> {
     }
 
     public void deleteAll() {
-        this.doActionDb((statement) -> statement.executeUpdate("TRUNCATE TABLE MODEL"));
+        this.doActionDb((statement) -> statement.executeUpdate("TRUNCATE TABLE MODEL CASCADE"));
     }
 
     public Model update(Model entity) {

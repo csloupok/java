@@ -1,6 +1,6 @@
 package itmo.kasymov.dao.jdbc;
 
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;

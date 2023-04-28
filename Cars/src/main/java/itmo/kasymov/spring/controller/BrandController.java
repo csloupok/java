@@ -1,7 +1,7 @@
 package itmo.kasymov.spring.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 import itmo.kasymov.spring.repository.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

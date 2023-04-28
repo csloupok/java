@@ -1,7 +1,7 @@
 import itmo.kasymov.dao.hibernate.HibernateBrandDao;
 import itmo.kasymov.dao.hibernate.HibernateModelDao;
-import itmo.kasymov.model.Brand;
-import itmo.kasymov.model.Model;
+import itmo.kasymov.entity.Brand;
+import itmo.kasymov.entity.Model;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

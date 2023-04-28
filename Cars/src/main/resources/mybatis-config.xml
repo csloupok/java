@@ -14,7 +14,7 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="BrandMapper.xml"/>
         <mapper resource="ModelMapper.xml"/>
+        <mapper resource="BrandMapper.xml"/>
     </mappers>
 </configuration>

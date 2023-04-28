@@ -1,7 +1,7 @@
 import itmo.kasymov.dao.mybatis.MybatisBrandDao;
 import itmo.kasymov.dao.mybatis.MybatisModelDao;
-import itmo.kasymov.model.Brand;
-import itmo.kasymov.model.Model;
+import itmo.kasymov.entity.Brand;
+import itmo.kasymov.entity.Model;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

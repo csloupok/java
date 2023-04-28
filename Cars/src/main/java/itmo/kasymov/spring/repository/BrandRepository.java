@@ -1,6 +1,6 @@
 package itmo.kasymov.spring.repository;
 
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

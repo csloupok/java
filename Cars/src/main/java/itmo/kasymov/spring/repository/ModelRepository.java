@@ -1,6 +1,6 @@
 package itmo.kasymov.spring.repository;
 
-import itmo.kasymov.model.Model;
+import itmo.kasymov.entity.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

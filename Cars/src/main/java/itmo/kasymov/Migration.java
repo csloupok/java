@@ -1,6 +1,6 @@
 package itmo.kasymov;
 
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 import itmo.kasymov.spring.controller.BrandController;
 import org.flywaydb.core.Flyway;
 

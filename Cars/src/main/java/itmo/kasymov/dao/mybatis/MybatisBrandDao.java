@@ -1,6 +1,6 @@
 package itmo.kasymov.dao.mybatis;
 
-import itmo.kasymov.model.Brand;
+import itmo.kasymov.entity.Brand;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;

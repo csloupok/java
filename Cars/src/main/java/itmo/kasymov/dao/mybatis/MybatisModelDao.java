@@ -1,6 +1,6 @@
 package itmo.kasymov.dao.mybatis;
 
-import itmo.kasymov.model.Model;
+import itmo.kasymov.entity.Model;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
