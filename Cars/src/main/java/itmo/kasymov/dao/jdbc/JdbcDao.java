@@ -28,9 +28,8 @@ public abstract class JdbcDao<T> {
 
     protected void doActionDb(ThrowingConsumer<Statement> consumer) {
         try {
-            String dbURL = "jdbc:h2:mem:testdb;INIT=RUNSCRIPT FROM 'classpath:/data.sql'";
-            Connection c = DriverManager.getConnection(dbURL, "sa", "password");
-
+            String dbURL = "jdbc:postgresql://localhost/eldarkasymov";
+            Connection c = DriverManager.getConnection(dbURL);
 
             try {
                 Statement statement = c.createStatement();

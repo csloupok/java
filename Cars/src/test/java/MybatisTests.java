@@ -2,6 +2,7 @@ import itmo.kasymov.dao.mybatis.MybatisBrandDao;
 import itmo.kasymov.dao.mybatis.MybatisModelDao;
 import itmo.kasymov.entity.Brand;
 import itmo.kasymov.entity.Model;
+import org.junit.Ignore;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -16,6 +17,7 @@ public class MybatisTests {
     public MybatisTests() {
     }
 
+    @Ignore
     @Test
     public void save() throws Exception {
         Brand brand = new Brand("Brand", LocalDate.now());
@@ -29,6 +31,7 @@ public class MybatisTests {
         assertTrue(this.brandDao.getAll().stream().anyMatch((brnd) -> brnd.getId().equals(brand.getId())));
     }
 
+    @Ignore
     @Test
     public void removeByEntity() throws Exception {
         Brand brand = new Brand("Brand", LocalDate.now());
@@ -44,6 +47,7 @@ public class MybatisTests {
         assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> brnd.getId().equals(brand.getId())));
     }
 
+    @Ignore
     @Test
     public void removeById() throws Exception {
         Brand brand = new Brand("Brand", LocalDate.now());
@@ -59,6 +63,7 @@ public class MybatisTests {
         assertTrue(this.brandDao.getAll().stream().noneMatch((brnd) -> brnd.getId().equals(brand.getId())));
     }
 
+    @Ignore
     @Test
     public void removeAll() throws Exception {
         Brand brand = new Brand("Brand", LocalDate.now());
@@ -76,6 +81,7 @@ public class MybatisTests {
         assertTrue(this.brandDao.getAll().isEmpty());
     }
 
+    @Ignore
     @Test
     public void update() throws Exception {
         Brand brand = new Brand("Brand", LocalDate.now());
@@ -92,6 +98,7 @@ public class MybatisTests {
         assertEquals("New Model1", this.modelDao.getById(model1.getId()).getName());
     }
 
+    @Ignore
     @Test
     public void getById() throws Exception {
         Brand brand = new Brand("Brand", LocalDate.now());

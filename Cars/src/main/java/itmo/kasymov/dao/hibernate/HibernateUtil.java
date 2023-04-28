@@ -6,6 +6,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
+import org.postgresql.Driver;
 
 public class HibernateUtil {
     private static final SessionFactory sessionFactory = buildSessionFactory();
@@ -16,12 +17,11 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         try {
             Configuration configuration = new Configuration();
-            configuration.setProperty("hibernate.connection.driver_class", "org.h2.Driver");
-            configuration.setProperty("hibernate.connection.url", "jdbc:h2:mem:testdb");
-            configuration.setProperty("hibernate.connection.username", "sa");
-            configuration.setProperty("hibernate.connection.password", "password");
-            configuration.setProperty("hibernate.hbm2ddl.auto", "create");
             configuration.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+            configuration.setProperty("hibernate.connection.driver_class", Driver.class.getName());
+            configuration.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost/eldarkasymov");
+            configuration.setProperty("hibernate.connection.username", "eldarkasymov");
+            configuration.setProperty("hibernate.connection.password", "");
             configuration.addAnnotatedClass(Brand.class);
             configuration.addAnnotatedClass(Model.class);
             ServiceRegistry serviceRegistry = (new StandardServiceRegistryBuilder()).applySettings(configuration.getProperties()).build();
