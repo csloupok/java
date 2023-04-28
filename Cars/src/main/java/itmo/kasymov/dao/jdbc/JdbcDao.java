@@ -28,7 +28,7 @@ public abstract class JdbcDao<T> {
 
     protected void doActionDb(ThrowingConsumer<Statement> consumer) {
         try {
-            String dbURL = "jdbc:postgresql://localhost/eldarkasymov";
+            String dbURL = "jdbc:h2:mem:testdb/default?user=sa&password=password";
             Connection c = DriverManager.getConnection(dbURL);
 
             try {
