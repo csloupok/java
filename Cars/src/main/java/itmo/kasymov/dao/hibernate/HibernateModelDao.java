@@ -222,7 +222,7 @@ public class HibernateModelDao extends HibernateDao<Model> {
             Session session = HibernateUtil.getSessionFactory().openSession();
 
             try {
-                Query<Model> query = session.createQuery("SELECT m from Model m WHERE fk_brand.id = :id ", Model.class).setMaxResults(5);
+                Query<Model> query = session.createQuery("SELECT m from Model m WHERE brand.id = :id ", Model.class).setMaxResults(5);
                 query.setParameter("id", id);
                 models = query.list();
             } catch (Throwable var8) {

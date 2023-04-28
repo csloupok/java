@@ -7,8 +7,8 @@ import itmo.kasymov.model.Brand;
 
 import java.time.LocalDate;
 
-public class Main {
-    public Main() {
+public class ComparingMethods {
+    public ComparingMethods() {
     }
 
     public static void main(String[] args) throws Exception {

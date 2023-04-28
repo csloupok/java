@@ -21,8 +21,8 @@ public class HibernateTests {
         Brand brand = new Brand("Brand", LocalDate.now());
         Model model1 = new Model("Model1", 100, 100, "HATCHBACK", brand.getId());
         Model model2 = new Model("Model2", 100, 100, "SEDAN", brand.getId());
-        model1.setFk_brand(brand);
-        model2.setFk_brand(brand);
+        model1.setBrand(brand);
+        model2.setBrand(brand);
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);
@@ -36,8 +36,8 @@ public class HibernateTests {
         Brand brand = new Brand("Brand", LocalDate.now());
         Model model1 = new Model("Model1", 100, 100, "HATCHBACK", brand.getId());
         Model model2 = new Model("Model2", 100, 100, "SEDAN", brand.getId());
-        model1.setFk_brand(brand);
-        model2.setFk_brand(brand);
+        model1.setBrand(brand);
+        model2.setBrand(brand);
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);
@@ -53,8 +53,8 @@ public class HibernateTests {
         Brand brand = new Brand("Brand", LocalDate.now());
         Model model1 = new Model("Model1", 100, 100, "HATCHBACK", brand.getId());
         Model model2 = new Model("Model2", 100, 100, "SEDAN", brand.getId());
-        model1.setFk_brand(brand);
-        model2.setFk_brand(brand);
+        model1.setBrand(brand);
+        model2.setBrand(brand);
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);
@@ -70,8 +70,8 @@ public class HibernateTests {
         Brand brand = new Brand("Brand", LocalDate.now());
         Model model1 = new Model("Model1", 100, 100, "HATCHBACK", brand.getId());
         Model model2 = new Model("Model2", 100, 100, "SEDAN", brand.getId());
-        model1.setFk_brand(brand);
-        model2.setFk_brand(brand);
+        model1.setBrand(brand);
+        model2.setBrand(brand);
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);
@@ -89,8 +89,8 @@ public class HibernateTests {
         Brand brand = new Brand("Brand", LocalDate.now());
         Model model1 = new Model("Model1", 100, 100, "HATCHBACK", brand.getId());
         Model model2 = new Model("Model2", 100, 100, "SEDAN", brand.getId());
-        model1.setFk_brand(brand);
-        model2.setFk_brand(brand);
+        model1.setBrand(brand);
+        model2.setBrand(brand);
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);
@@ -107,8 +107,8 @@ public class HibernateTests {
         Brand brand = new Brand("Brand", LocalDate.now());
         Model model1 = new Model("Model1", 100, 100, "HATCHBACK", brand.getId());
         Model model2 = new Model("Model2", 100, 100, "SEDAN", brand.getId());
-        model1.setFk_brand(brand);
-        model2.setFk_brand(brand);
+        model1.setBrand(brand);
+        model2.setBrand(brand);
         this.brandDao.save(brand);
         this.modelDao.save(model1);
         this.modelDao.save(model2);

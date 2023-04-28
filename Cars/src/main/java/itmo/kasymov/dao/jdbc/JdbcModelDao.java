@@ -12,7 +12,7 @@ public class JdbcModelDao extends JdbcDao<Model> {
     }
 
     public Model save(Model entity) {
-        this.doActionDb((statement) -> statement.executeUpdate(String.format("INSERT INTO MODEL (MODEL_ID, MODEL_NAME, LENGTH, WIDTH, TYPE, BRAND) values (%d, '%s', %d, %d, '%s', %d)", entity.getId(), entity.getName(), entity.getLength(), entity.getWidth(), entity.getType(), entity.getBrand())));
+        this.doActionDb((statement) -> statement.executeUpdate(String.format("INSERT INTO MODEL (MODEL_ID, MODEL_NAME, LENGTH, WIDTH, TYPE, BRAND) values (%d, '%s', %d, %d, '%s', %d)", entity.getId(), entity.getName(), entity.getLength(), entity.getWidth(), entity.getType(), entity.getBrandId())));
         return entity;
     }
 
@@ -29,7 +29,7 @@ public class JdbcModelDao extends JdbcDao<Model> {
     }
 
     public Model update(Model entity) {
-        this.doActionDb((statement) -> statement.executeUpdate(String.format("UPDATE MODEL SET MODEL_NAME = '%s', LENGTH = %d, WIDTH = %d, TYPE = '%s', BRAND = %d WHERE MODEL_ID = %d", entity.getName(), entity.getLength(), entity.getWidth(), entity.getType(), entity.getBrand(), entity.getId())));
+        this.doActionDb((statement) -> statement.executeUpdate(String.format("UPDATE MODEL SET MODEL_NAME = '%s', LENGTH = %d, WIDTH = %d, TYPE = '%s', BRAND = %d WHERE MODEL_ID = %d", entity.getName(), entity.getLength(), entity.getWidth(), entity.getType(), entity.getBrandId(), entity.getId())));
         return entity;
     }
 

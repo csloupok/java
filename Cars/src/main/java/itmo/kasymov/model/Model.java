@@ -20,15 +20,15 @@ public class Model {
     @Column(name = "TYPE")
     private String type;
     @Transient
-    private Long brand;
+    private Long brandId;
     @ManyToOne
     @JoinColumn(name = "BRAND", referencedColumnName = "BRAND_ID")
-    private Brand fk_brand;
+    private Brand brand;
 
     public Model() {
     }
 
-    public Model(String name, Integer length, Integer width, String type, Long brand, Long... id) throws Exception {
+    public Model(String name, Integer length, Integer width, String type, Long brandId, Long... id) throws Exception {
         if (StringUtils.isEmpty(name)) {
             throw new Exception("String is empty!");
         } else {
@@ -42,16 +42,16 @@ public class Model {
             this.length = length;
             this.width = width;
             this.type = type.toUpperCase();
-            this.brand = brand;
+            this.brandId = brandId;
         }
     }
 
-    public Brand getFk_brand() {
-        return this.fk_brand;
+    public Brand getBrand() {
+        return this.brand;
     }
 
-    public void setFk_brand(Brand fk_brand) {
-        this.fk_brand = fk_brand;
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 
     public Long getId() {
@@ -82,7 +82,7 @@ public class Model {
         return this.type;
     }
 
-    public Long getBrand() {
-        return this.brand;
+    public Long getBrandId() {
+        return this.brandId;
     }
 }
