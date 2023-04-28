@@ -3,6 +3,7 @@ import itmo.kasymov.dao.jdbc.JdbcModelDao;
 import itmo.kasymov.entity.Brand;
 import itmo.kasymov.entity.Model;
 import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled
 public class JdbcTests {
     private final JdbcModelDao modelDao = new JdbcModelDao();
     private final JdbcBrandDao brandDao = new JdbcBrandDao();

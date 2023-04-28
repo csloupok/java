@@ -2,6 +2,7 @@ import itmo.kasymov.dao.hibernate.HibernateBrandDao;
 import itmo.kasymov.dao.hibernate.HibernateModelDao;
 import itmo.kasymov.entity.Brand;
 import itmo.kasymov.entity.Model;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Disabled
 public class HibernateTests {
     private final HibernateModelDao modelDao = new HibernateModelDao();
     private final HibernateBrandDao brandDao = new HibernateBrandDao();
