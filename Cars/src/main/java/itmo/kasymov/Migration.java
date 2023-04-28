@@ -1,10 +1,6 @@
 package itmo.kasymov;
 
-import itmo.kasymov.entity.Brand;
-import itmo.kasymov.spring.controller.BrandController;
 import org.flywaydb.core.Flyway;
-
-import java.util.List;
 
 public class Migration {
     public static void main(String[] args) {
