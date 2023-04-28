@@ -9,9 +9,8 @@ import java.util.List;
 public class Migration {
     public static void main(String[] args) {
         Flyway flyway = Flyway.configure().dataSource("jdbc:postgresql://localhost/eldarkasymov", "eldarkasymov", null).load();
+        flyway.baseline();
+        flyway.repair();
         flyway.migrate();
-        BrandController poopy = new BrandController();
-        List<Brand> brendiki = poopy.getAllBrands();
-        int kek = 0;
     }
 }
