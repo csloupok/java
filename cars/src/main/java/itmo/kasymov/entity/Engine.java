@@ -1,7 +1,11 @@
 package itmo.kasymov.entity;
 
-
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 import org.apache.commons.lang3.StringUtils;
 
 @Entity
