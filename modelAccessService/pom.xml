@@ -13,7 +13,7 @@
     <groupId>itmo.kasymov</groupId>
     <artifactId>modelAccessService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Cars</name>
+    <name>modelService</name>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
