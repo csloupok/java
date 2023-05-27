@@ -1,7 +1,7 @@
-import itmo.kasymov.dao.jdbc.JdbcBrandDao;
-import itmo.kasymov.dao.jdbc.JdbcModelDao;
-import itmo.kasymov.entity.Brand;
-import itmo.kasymov.entity.Model;
+import itmo.kasymov.mainService.dao.jdbc.JdbcBrandDao;
+import itmo.kasymov.mainService.dao.jdbc.JdbcModelDao;
+import itmo.kasymov.mainService.entity.Brand;
+import itmo.kasymov.mainService.entity.Model;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

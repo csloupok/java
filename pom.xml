@@ -10,6 +10,8 @@
     <modules>
         <module>Banks</module>
         <module>cars</module>
+        <module>brandAccessService</module>
+        <module>modelAccessService</module>
     </modules>
     <packaging>pom</packaging>
 

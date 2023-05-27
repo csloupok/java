@@ -1,7 +1,7 @@
-import itmo.kasymov.dao.hibernate.HibernateBrandDao;
-import itmo.kasymov.dao.hibernate.HibernateModelDao;
-import itmo.kasymov.entity.Brand;
-import itmo.kasymov.entity.Model;
+import itmo.kasymov.mainService.dao.hibernate.HibernateBrandDao;
+import itmo.kasymov.mainService.dao.hibernate.HibernateModelDao;
+import itmo.kasymov.mainService.entity.Brand;
+import itmo.kasymov.mainService.entity.Model;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

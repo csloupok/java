@@ -1,7 +1,7 @@
-import itmo.kasymov.dao.mybatis.MybatisBrandDao;
-import itmo.kasymov.dao.mybatis.MybatisModelDao;
-import itmo.kasymov.entity.Brand;
-import itmo.kasymov.entity.Model;
+import itmo.kasymov.mainService.dao.mybatis.MybatisBrandDao;
+import itmo.kasymov.mainService.dao.mybatis.MybatisModelDao;
+import itmo.kasymov.mainService.entity.Brand;
+import itmo.kasymov.mainService.entity.Model;
 import org.junit.Ignore;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

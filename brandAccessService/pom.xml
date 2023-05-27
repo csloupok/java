@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>itmo.kasymov</groupId>
-    <artifactId>cars</artifactId>
+    <artifactId>brandAccessService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Cars</name>
 
@@ -116,11 +116,6 @@
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
             <version>3.24.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

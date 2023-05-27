@@ -1,8 +1,8 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="itmo.kasymov.dao.mybatis.ModelMapper">
-    <resultMap id="modelMap" type="itmo.kasymov.entity.Model">
+<mapper namespace="itmo.kasymov.mainService.dao.mybatis.ModelMapper">
+    <resultMap id="modelMap" type="itmo.kasymov.mainService.entity.Model">
         <id property="id" column="model_id"/>
         <result property="name" column="model_name"/>
         <result property="length" column="length"/>
@@ -12,14 +12,14 @@
                 property="brand"
                 column="brand"
                 select="selectBrand"
-                javaType="itmo.kasymov.entity.Brand">
+                javaType="itmo.kasymov.mainService.entity.Brand">
             <id column="brand_id" property="id"/>
             <result column="brand_name" property="name"/>
             <result column="found_date" property="date"/>
         </association>
     </resultMap>
 
-    <select id="selectBrand" resultType="itmo.kasymov.entity.Brand">
+    <select id="selectBrand" resultType="itmo.kasymov.mainService.entity.Brand">
         SELECT * from brand where brand_id = #{brandId}
     </select>
 
@@ -32,11 +32,11 @@
         SELECT *
         FROM MODEL
     </select>
-    <insert id="save" parameterType="itmo.kasymov.entity.Model">
+    <insert id="save" parameterType="itmo.kasymov.mainService.entity.Model">
         INSERT INTO MODEL (MODEL_ID, MODEL_NAME, LENGTH, WIDTH, TYPE, BRAND)
         VALUES (#{id}, #{name}, #{length}, #{width}, #{type}, #{brandId})
     </insert>
-    <update id="update" parameterType="itmo.kasymov.entity.Model">
+    <update id="update" parameterType="itmo.kasymov.mainService.entity.Model">
         UPDATE MODEL
         SET MODEL_NAME=#{name},
             LENGTH=#{length},
@@ -50,7 +50,7 @@
         FROM MODEL
         WHERE MODEL_ID = #{id}
     </delete>
-    <delete id="deleteByEntity" parameterType="itmo.kasymov.entity.Model">
+    <delete id="deleteByEntity" parameterType="itmo.kasymov.mainService.entity.Model">
         DELETE
         FROM MODEL
         WHERE MODEL_ID = #{id}
