@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import itmo.kasymov.entity.Engine;
 import itmo.kasymov.spring.service.EngineService;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -19,24 +20,28 @@ public class EngineController {
     }
 
     @Operation(summary = "Get all engines")
-    @RequestMapping(value = "/getAllEngines", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value = "/engine/getAllEngines", method = RequestMethod.GET)
     public List<Engine> getAllEngines() {
         return engineService.getAllEngines();
     }
 
     @Operation(summary = "Get by engine name")
-    @RequestMapping(value = "/getByEngineName", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value = "/engine/getByEngineName", method = RequestMethod.GET)
     public List<Engine> getByEngineName(String name) {
         return engineService.getByEngineName(name);
     }
 
     @Operation(summary = "Get engines by model id")
-    @RequestMapping(value = "/getByModelId", method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ADMIN')")
+    @RequestMapping(value = "/engine/getByModelId", method = RequestMethod.GET)
     public List<Engine> getAllByModelId(Long modelId) {
         return engineService.getAllByModelId(modelId);
     }
 
     @Operation(summary = "Get engine by id")
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(value = "/engine/{id}", method = RequestMethod.GET)
     public Engine getEngineById(@PathVariable Long id) {
         try {
@@ -47,14 +52,16 @@ public class EngineController {
     }
 
     @Operation(summary = "Save engine")
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(value = "/engine", method = RequestMethod.POST)
     public Engine createEngine(@RequestBody Engine engine) {
         return engineService.createEngine(engine);
     }
 
     @Operation(summary = "Update engine")
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(value = "/engine/{id}", method = RequestMethod.PUT)
-    public Engine updateEngine(@PathVariable Long id, @RequestBody Engine newEngine) throws Exception {
+    public Engine updateEngine(@PathVariable Long id, @RequestBody Engine newEngine) {
         try {
             return engineService.updateEngine(id, newEngine);
         } catch (Exception e) {
@@ -63,6 +70,7 @@ public class EngineController {
     }
 
     @Operation(summary = "Delete engine")
+    @PreAuthorize("hasRole('ADMIN')")
     @RequestMapping(value = "/engine/{id}", method = RequestMethod.DELETE)
     public void deleteEngine(@PathVariable Long id) {
         try {
