@@ -6,14 +6,13 @@
 
     <groupId>itmo.kasymov</groupId>
     <artifactId>ITMO-Tech</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>Banks</module>
-        <module>cars</module>
-        <module>brandAccessService</module>
-        <module>modelAccessService</module>
-    </modules>
     <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>banks</module>
+        <module>cars</module>
+    </modules>
 
     <dependencies>
         <dependency>
